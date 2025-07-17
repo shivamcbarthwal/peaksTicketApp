@@ -4,25 +4,79 @@
  *
  * @format
  */
+import 'react-native-gesture-handler'
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './Home';
+import Tickets from './Tickets';
+import Contact from './Contact';
+import TicketPurchase from './TicketPurchase';
+import News from './News';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const Stack = createStackNavigator();
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <>
+      <StatusBar barStyle="dark-content" hidden />
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontFamily: 'Ubuntu-Regular'}
+          }}
+        >
+          <Stack.Screen
+            name="Home"
+            options={{
+              headerShown: false,
+            }}
+          >
+            {(props) => <Home {...props} username='Sports Fan' />}
+          </Stack.Screen>
+          <Stack.Screen
+            name="Tickets"
+            component={Tickets}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {fontFamily: 'Ubuntu-Regular'}
+            }}
+          />
+          <Stack.Screen
+            name="Contact"
+            component={Contact}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {fontFamily: 'Ubuntu-Regular'},
+              headerTitle: 'Contact Us'
+            }}
+          />
+          <Stack.Screen
+            name="Purchase"
+            component={TicketPurchase}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {fontFamily: 'Ubuntu-Regular'},
+              headerTitle: 'Purchase Tickets'
+            }}
+          />
+          <Stack.Screen
+            name="News"
+            component={News}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {fontFamily: 'Ubuntu-Regular'},
+              headerTitle: 'Latest News'
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
