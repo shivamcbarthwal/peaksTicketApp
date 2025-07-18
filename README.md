@@ -3,6 +3,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 # Getting Started
 
 > **Note**: Make sure you have jdk 17 installed
+> Android studio installed to the launch the virtual app manager
 
 ## Step 1: Install the dependencies
 
