@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import globoTickets from './TicketsDB';
+import globoTickets from '../../TicketsDB';
 
 const Tickets = ({navigation}) => {
   const ticketItem = ({item}) => {

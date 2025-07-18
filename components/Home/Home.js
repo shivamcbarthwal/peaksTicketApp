@@ -1,19 +1,19 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
-import Menu from './Menu';
+import Menu from '../Menu/Menu';
 
 const Home = (props) => {
   return (
     <View style={styles.container}>
       <Image
         style={styles.globologo}
-        source={require('./images/_Export_globoticket-bug-black.png')}
+        source={require('../../images/_Export_globoticket-bug-black.png')}
         />
       <Text style={styles.title}>Welcome to GloboTicket</Text>
       <Text style={styles.subtitle}>{props.username}</Text>
       <Image
         style={styles.heroimage}
-        source={require('./images/boxing.jpg')}
+        source={require('../../images/boxing.jpg')}
         />
       <View style={styles.textContainer}>
         <Text style={styles.content}>{introText}</Text>

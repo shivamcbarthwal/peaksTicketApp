@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Alert, TouchableOpacity } from 'react-native';
-import globoTickets from './TicketsDB';
+import globoTickets from '../../TicketsDB';
 
 const TicketPurchase = ({route, navigation}) => {
   const [ticketQuantity, setTicketQuantity] = useState('1');

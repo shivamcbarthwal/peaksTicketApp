@@ -9,11 +9,11 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './Home';
-import Tickets from './Tickets';
-import Contact from './Contact';
-import TicketPurchase from './TicketPurchase';
-import News from './News';
+import Home from './components/Home/Home';
+import Tickets from './components/Tickets/Tickets';
+import Contact from './components/Contact/Contact';
+import TicketPurchase from './components/Tickets/TicketPurchase';
+import News from './components/News/News';
 
 const Stack = createStackNavigator();
 
